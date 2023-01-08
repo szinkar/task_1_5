@@ -1,0 +1,167 @@
+$black: #111;
+$white: #fff;
+
+
+@import "_normalize.scss";
+
+
+%tplayer{
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  padding: 100vh 0;
+}
+
+
+%tpcontent-img{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: -1;
+  box-shadow: -1px -20px 48px 17px rgba(5, 9, 13, 0.8);
+}
+
+
+.parallax{
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+  perspective: 1px;
+  &__group{
+    position: relative;
+    height: 100vh;
+    transform-style: preserve-3d;
+  }
+  &__group-fall{
+    margin-top: auto;
+  }
+  &__layer-winter{
+    @extend %tplayer;
+    top: 0;
+    // position: absolute;
+    // right: 0;
+    // bottom: 0;
+    // left: 0;
+    // padding: 100vh 0;
+  }
+  &__layer-spring{
+    @extend %tplayer;
+    top: 250%;
+    // position: absolute;
+    // right: 0;
+    // bottom: 0;
+    // left: 0;
+    // padding: 100vh 0;
+  }
+  &__layer-summer{
+    @extend %tplayer;
+    top: 350%;
+    // position: absolute;
+    // right: 0;
+    // bottom: 0;
+    // left: 0;
+    // padding: 100vh 0;
+  }
+  &__layer-fall{
+    @extend %tplayer;
+    top: 450%;
+    // position: absolute;
+    // right: 0;
+    // bottom: 0;
+    // left: 0;
+    // padding: 100vh 0;
+  }
+  &__content-winter{
+    position: absolute;
+    left: 50%;
+    top: 40%;
+    transform: translate( -50%, -50%);
+    font-size: 5em;
+  }
+  &__content-spring{
+    position: absolute;
+    left: 50%;
+    top: 20%;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    color: $white;
+  }
+  &__content-summer{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    color: $white;
+  }
+  &__content-fall{
+    position: absolute;
+    left: 50%;
+    top: 90%;
+    transform: translate(-50%, -50%);
+    font-size: 5em;
+    color: $black;
+  }
+  &__content-img-winter{
+    @extend %tpcontent-img;
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // z-index: -1;
+    transform: translate(-50%, -50%) scale(65%);
+  }
+  &__content-img-spring{
+    @extend %tpcontent-img;
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // z-index: -1;
+    transform: translate(-50%, -50%) scale(55%);
+  }
+  &__content-img-summer{
+    @extend %tpcontent-img;
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // z-index: -1;
+    transform: translate(-50%, -50%) scale(100%);
+  }
+  &__content-img-fall{
+    @extend %tpcontent-img;
+    // position: absolute;
+    // left: 50%;
+    // top: 50%;
+    // z-index: -1;
+    transform: translate(-50%, -50%) scale(70%);
+  }
+  &__layer-base-winter{
+    transform: translateZ(0);
+  }
+  &__layer-base-spring{
+    transform: translateZ(0);
+  }
+  &__layer-base-summer{
+    transform: translateZ(0);
+  }
+  &__layer-base-fall{
+    transform: translateZ(0);
+  }
+  &__layer-back-winter{
+    transform: translateZ(-2px) scale(3);
+  }
+  &__layer-back-spring{
+    transform: translateZ(-1px) scale(2);
+  }
+  &__layer-back-summer{
+    transform: translateZ(-1px) scale(2);
+  }
+  &__layer-back-fall{
+    transform: translateZ(0);
+  }
+}
+
+
+.footer{
+  margin-top: auto;
+}
